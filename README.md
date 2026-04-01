@@ -1,8 +1,6 @@
 # WebApp2026
 웹프로그래밍응용 과제, 수업내용
 
-1. 변경된 파일 확인 (Check)
-어떤 파일이 수정되었는지, 새로 추가된 폴더(Week5 등)는 무엇인지 목록을 확인합니다.
 
 PowerShell
 git status
@@ -11,7 +9,7 @@ git status
 
 PowerShell
 git add .
-git commit -m "5주차 컴포넌트 및 Props 실습 완료"
+git commit -m "깃허브 메모"
 -m "메시지": 깃허브 히스토리에 남을 짧은 메모입니다. 나중에 과제 증빙 시 중요합니다.
 
 3. 푸시 (Upload)
