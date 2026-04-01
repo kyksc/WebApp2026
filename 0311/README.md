@@ -45,8 +45,14 @@
 * **가상 돔(Virtual DOM)의 장점:** 기존 웹이 화면 전체의 DOM을 다시 그렸다면, 리액트는 메모리상의 '가상 돔'을 사용해 변경된 부분만 찾아 실제 화면에 반영하므로 렌더링 속도가 매우 빠릅니다.
 
 ### 🛠️ 프로젝트 생성 명령어
-* **Vite 방식 (권장):** `npm create vite@latest my-app --template react`
-* **CRA 방식:** `npx create-react-app my-app`
+
+```bash
+# Vite 방식 (권장)
+npm create vite@latest my-app --template react
+
+# CRA 방식
+npx create-react-app my-app
+```
 
 > **🚨 Git 업로드 시 주의사항 (`.gitignore`)**
 > 리액트 프로젝트 생성 시 만들어지는 `node_modules` 폴더는 용량이 매우 큽니다. 따라서 깃허브에 업로드할 때는 `.gitignore` 파일에 이를 포함시켜 업로드 대상에서 제외해야 합니다.
@@ -58,7 +64,41 @@
 * **Babel:** 브라우저는 JSX를 바로 읽을 수 없으므로, Babel이라는 도구가 이를 일반적인 JavaScript 코드(`React.createElement()`)로 변환해 줍니다.
 
 ### 📝 필수 문법 및 규칙
-1. **반드시 단일 부모 요소로 감싸기:** 2개 이상의 태그를 반환(`return`)할 경우, 전체를 감싸는 묶음 태그(또는 `<>` `</>` 빈 태그)가 없으면 에러가 발생합니다.
-2. **자바스크립트 표현식 사용:** 중괄호 `{}`를 사용하면 그 안에서 자바스크립트 변수나 수식을 사용할 수 있습니다.
-3. **카멜 표기법(camelCase):** 기존 HTML의 `class` 대신 `className`을 사용해야 합니다.
-4. **조건부 렌더링:** 삼항 연산자(`조건 ? A : B`)나 논리 연산자(`&&`)를 활용해 상황에 맞는 UI를 쉽게 그릴 수 있습니다.
+
+**1. 반드시 단일 부모 요소로 감싸기**
+
+```jsx
+// ❌ 에러
+return (
+  <h1>제목</h1>
+  <p>내용</p>
+);
+
+// ✅ 빈 태그로 감싸기
+return (
+  <>
+    <h1>제목</h1>
+    <p>내용</p>
+  </>
+);
+```
+
+**2. 자바스크립트 표현식 사용**
+
+```jsx
+const name = "React";
+return <h1>Hello, {name}!</h1>;
+```
+
+**3. 카멜 표기법(camelCase)**
+
+```jsx
+<div className="container">  {/* class ❌ → className ✅ */}
+```
+
+**4. 조건부 렌더링**
+
+```jsx
+{isLoggedIn ? <Dashboard /> : <Login />}  // 삼항 연산자
+{isAdmin && <AdminPanel />}               // 논리 연산자
+```
