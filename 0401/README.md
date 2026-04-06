@@ -1,3 +1,5 @@
+🔗 프로젝트 결과물 (Live Demo)
+배포 URL: https://web-app2026-hyp2.vercel.app/
 # 🚀 5주차 웹 프로그래밍 응용: React Component와 Props 심화
 
 이번 강의는 React의 핵심인 **컴포넌트(Component) 기반 구조**를 이해하고, JSX를 활용한 엘리먼트 생성, 컴포넌트 작성 방법, 그리고 Props를 통한 데이터 전달 방식을 학습하는 데 목적이 있습니다.
