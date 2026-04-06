@@ -1,0 +1,158 @@
+/* Google 폰트 (Inter 또는 Roboto와 같은 모던한 산세리프 폰트 권장) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  /* 요청하신 깨끗한 화이트 배경 */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #202124;
+  /* Google의 기본 다크 그레이 텍스트 (완전한 검은색보다 세련됨) */
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- Header ---- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.nav a {
+  margin-left: 32px;
+  text-decoration: none;
+  color: #5F6368;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #202124;
+}
+
+/* ---- Hero ---- */
+.hero {
+  padding: 120px 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 600;
+  letter-spacing: -2px;
+  margin: 0 0 24px 0;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #5F6368;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---- Project List ---- */
+.project-list {
+  padding: 40px 0 120px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+/* ---- Project Card (핵심 요구사항 포인트) ---- */
+.project-card {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  /* 요구사항: 깊은 곡률 */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+
+  /* 아주 부드럽고 넓게 퍼지는 기본 그림자 + 미세한 테두리로 배경에서 구분 */
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+
+  /* 부드러운 '공중에 떠오르는' Hover 효과를 위한 트랜지션 (cubic-bezier 활용) */
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card:hover {
+  /* 위로 살짝 부양하며 깊은 그림자 생성 (Antigravity 느낌) */
+  transform: translateY(-12px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08),
+    0 12px 24px rgba(0, 0, 0, 0.04);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.card-description {
+  color: #5F6368;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.tag {
+  background-color: #F8F9FA;
+  /* 아주 연한 회색으로 깔끔하게 */
+  color: #3C4043;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.card-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1A73E8;
+  /* 시그니처 구글 블루 포인트 */
+  align-self: flex-start;
+  transition: opacity 0.2s;
+}
+
+.card-link:hover {
+  opacity: 0.7;
+}
+
+/* ---- Footer ---- */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #9AA0A6;
+  font-size: 0.9rem;
+  border-top: 1px solid #F1F3F4;
+}
